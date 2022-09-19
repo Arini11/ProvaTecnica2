@@ -1,10 +1,6 @@
 <nav class="navbar navbar-expand navbar-dark bg-dark">
-  <a routerLink="home" class="navbar-brand">Home</a>
-  <div class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a *ngIf="user!=undefined" routerLink="add" class="nav-link"></a>
-      </li>
-  </div>
+  <a routerLink="home" *ngIf="user!=undefined" class="navbar-brand">Home</a>
+  <a *ngIf="user==undefined" class="navbar-brand">Home</a>
   <div class="navbar-nav ms-auto user">
       <li class="nav-item">
         <a *ngIf="user!=undefined" routerLink="peliculas" class="nav-link">Pelicules</a>

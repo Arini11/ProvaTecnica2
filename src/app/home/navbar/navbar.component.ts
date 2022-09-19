@@ -17,6 +17,8 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = window.sessionStorage.getItem(USERNAME)
+    if(this.user == undefined)
+      this.router.navigate(['/login'])
     console.log(this.user)
   }
 
