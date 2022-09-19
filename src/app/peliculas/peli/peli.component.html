@@ -1,0 +1,12 @@
+
+
+<div *ngIf="peli" class="card">
+  <img src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/{{peli.poster_path}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h3>{{peli.title}}</h3>
+    <h5>{{peli.original_title}}</h5>
+    <p class="card-text">
+  </div>
+  <a [routerLink] = "['/peliculas', peli.id]" class="btn btn-primary ver-mas">Ver más</a>
+</div>
+

@@ -1,0 +1,15 @@
+
+<div>
+  <div class="container">
+    <button (click)="getMasPopulares()">Mas Populares</button>
+    <p>Buscar por:</p>
+    <button (click)="getMasPopulares()">Titulo</button>
+    <button (click)="getMasPopulares()">Titulo Original</button>
+    <button (click)="getMasPopulares()">Overview</button>
+  </div>
+  <div class="row row-cols-1 row-cols-md-4 g-6 mx-5 mt-5">
+    <app-peli *ngFor="let p of pelis" [peli]="p"></app-peli>
+  </div>
+</div>
+
+
