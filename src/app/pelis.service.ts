@@ -20,4 +20,16 @@ export class PelisService {
     return this.http.get(baseUrl+"movie/"+id+"?api_key="+API_KEY);
   }
 
+  getByTitle(q: string): Observable<any> {
+    return this.http.get(baseUrl+"search/movie?api_key="+API_KEY+"&query="+q);
+  }
+
+  getByGenre(id: any): Observable<any> {
+    return this.http.get(baseUrl+"discover/movie?api_key="+API_KEY+"&with_genres="+id);
+  }
+
+  getAllGeneres(): Observable<any> {
+    return this.http.get(baseUrl+"genre/movie/list?api_key="+API_KEY);
+  }
+
 }

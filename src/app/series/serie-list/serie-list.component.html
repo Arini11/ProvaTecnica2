@@ -1,11 +1,17 @@
 
 <div>
+  <h1 style="text-align: center">Series</h1>
   <div class="container">
-    <button (click)="getMasPopulares()">Mas Populares</button>
-    <p>Buscar por:</p>
-    <button (click)="getMasPopulares()">Titulo</button>
-    <button (click)="getMasPopulares()">Titulo Original</button>
-    <button (click)="getMasPopulares()">Overview</button>
+    <!-- Buscar top populars -->
+    <button (click)="getMasPopulares()" style="margin-right: 20px">Mes Populars</button>
+    <!-- Buscar per titol -->
+    <input [(ngModel)]="searchInput" placeholder="Titol, descripcio..."/>
+    <button (click)="searchByTitle()" style="margin-right: 20px">Buscar</button>
+    <!-- Buscar per genere -->
+    <select (change)="searchByGenere($event)">
+      <option selected value="0">GENERES</option>
+      <option *ngFor="let g of generes" value="{{g.id}}" >{{g.name}}</option>
+    </select>
   </div>
   <div class="row row-cols-1 row-cols-md-4 g-6 mx-5 mt-5">
     <app-serie *ngFor="let s of series" [serie]="s"></app-serie>
